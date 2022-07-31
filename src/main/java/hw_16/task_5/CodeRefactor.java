@@ -1,5 +1,6 @@
 package hw_16.task_5;
 
+//+
 public class CodeRefactor {
     public static void main(String[] args) {
         Website website = new Website("http://www.onliner.by");
@@ -17,7 +18,7 @@ class Website {
     private WebsiteType type;
 
     public Website(String url) {
-
+//лишняя строка
         this(url, WebsiteType.NEWS);
     }
 
