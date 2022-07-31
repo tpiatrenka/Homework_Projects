@@ -3,6 +3,7 @@ package hw_16.task_2;
 import java.util.ArrayList;
 import java.util.List;
 
+//+-
 //Есть магазин игрушек, в который несколько поставщиков (потоков) доставляют товар.
 // Вам необходимо доставить в магазин игрушки (например 100 от одного поставщика
 // и 50 от другого и затем вывести на экран все игрушки, которые сейчас в магазине
@@ -33,6 +34,7 @@ class DeliveryThread extends Thread {
     @Override
     public void run() {
         Thread thread = Thread.currentThread();
+        //можно использовать String.valueOf для преобразования, чтобы в цикле использовать int
         for (Integer i = 1; i <= number; i++) {
             shop.put(new Toy(i.toString()));
         }
@@ -46,6 +48,7 @@ class ToyShop {
         list.add(toy);
     }
 
+    //тут нет изменений листа - методу не надо быть synchronized 
     public synchronized List<Toy> list() {
         return list;
     }
