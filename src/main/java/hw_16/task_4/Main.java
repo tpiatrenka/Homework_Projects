@@ -12,7 +12,7 @@ public class Main {
         for (int i = 0; i < args.length; i++) {
             File file = new File(args[i]);
             ReaderThread rt = new ReaderThread(file);
-            rt.start();
+            rt.start(); //каждый из потоков работает последовательно - добавь в run вывод текущего потока. Попробуй переписать с использованием executorService
             rt.join();
             System.out.println(args[i] + " " + rt.numberOfWords);
         }
